@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponsor Registration Form</title>
+  <link rel="stylesheet" href="sponsors.css">
 </head>
 <body>
-    
+
+  <section class="form-section">
+    <div class="form-wrapper">
+
+      <!-- Left Image Section -->
+      <div class="form-image">
+        <img src="images/sponsors/sponsorss.jpg" alt="Sponsorship">
+      </div>
+
+      <!-- Right Form Section -->
+      <div class="form-container">
+        <h2>Sponsor Registration Form</h2>
+
+        <form action="#" method="post" enctype="multipart/form-data">
+
+          <div class="form-group">
+            <label for="sponsor-name">Sponsor Name</label>
+            <input type="text" id="sponsor-name" name="sponsor_name" placeholder="Enter full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="sponsor-email">Email Address</label>
+            <input type="email" id="sponsor-email" name="sponsor_email" placeholder="Enter email address" required>
+          </div>
+
+          <div class="form-group">
+            <label for="sponsor-phone">Phone Number</label>
+            <input type="tel" id="sponsor-phone" name="sponsor_phone" placeholder="Enter phone number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="brand-name">Name of Brand / Company</label>
+            <input type="text" id="brand-name" name="brand_name" placeholder="Enter company name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="logo-upload">Upload Your Logo <span class="optional">(Optional)</span></label>
+            <input type="file" id="logo-upload" name="logo_upload" accept="image/*">
+          </div>
+
+          <div class="form-group">
+            <div class="sponsorship-label">
+              <label for="sponsorship-type">Sponsorship Type</label>
+              <a href="#" class="learn-more" target="_blank">Learn More</a>
+            </div>
+            <select id="sponsorship-type" name="sponsorship_type" required>
+              <option value="">-- Select Sponsorship Type --</option>
+              <option value="bronze">Bronze (₦500,000+)</option>
+              <option value="silver">Silver (₦1 Million+)</option>
+              <option value="gold">Gold (₦3 Million+)</option>
+              <option value="platinum">Platinum (₦5 Million+)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
