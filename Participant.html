@@ -20,7 +20,7 @@
       <div class="form-container">
         <h2>Team Registration Form</h2>
 
-        <form action="#" method="post">
+        <form action="#" method="post" id="startUpForm">
           <div class="form-group">
             <label for="contact-name">Team Contact Person Name</label>
             <input type="text" id="contact-name" name="Team_ContactPerson" placeholder="Enter full name" required>
@@ -99,12 +99,79 @@
             <textarea id="team-members" name="Team_members" rows="4" placeholder="Type your response here..." required></textarea>
           </div>
 
-          <button type="submit" class="submit-btn">Submit</button>
+          <button type="submit" class="submit-btn displayAction">Submit</button>
         </form>
       </div>
 
     </div>
   </section>
 
+
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+      $(document).ready(function () {
+    //Clicked Action 
+
+$('#startUpForm').on('submit', function (e) {
+  e.preventDefault();
+
+  const form = $(this);
+  const formData = new FormData(this);
+  const submitBtn = form.find('.displayAction');
+  submitBtn.prop('disabled', true).text('Submitting...');
+
+  $.ajax({
+    type: 'POST',
+    url: 'backend/participant.php',
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function (res) {
+      try {
+        const response = JSON.parse(res);
+        if (response.success) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: response.message,
+            confirmButtonColor: '#198754',
+          });
+          form[0].reset();
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: response.message || 'An unknown error occurred.',
+            confirmButtonColor: '#dc3545',
+          });
+        }
+      } catch (err) {
+        console.error(err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Parse Error',
+          text: 'Could not parse server response.',
+        });
+      }
+    },
+    error: function (xhr, status, error) {
+      console.error(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Request Failed',
+        text: 'Something went wrong. Please try again.',
+      });
+    },
+    complete: function () {
+      submitBtn.prop('disabled', false).text('Submit');
+    }
+  });
+});
+});
+  </script>
 </body>
 </html>
