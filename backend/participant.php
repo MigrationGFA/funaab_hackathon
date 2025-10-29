@@ -37,9 +37,6 @@ $Team_matricNo           = trim($_POST['Team_matricNo'] ?? '');
 $Team_problem          = trim($_POST['Team_problem'] ?? '');
 $Team_needs            = trim($_POST['Team_needs'] ?? '');
 $Team_members      = trim($_POST['Team_members'] ?? '');
-$certification          = trim($_POST['certification'] ?? '');
-// $Reason_Consideration   = trim($_POST['Reason_Consideration'] ?? '');
-// $learning_method        = trim($_POST['learning_method'] ?? '');
 
 // Basic validation
 if (empty($Team_name) || empty($Team_Email) || empty($Team_ContactEmail)) {
@@ -66,13 +63,12 @@ $stmt = $conn->prepare("
     INSERT INTO participants (
         Team_name, Team_Email, Team_website, Team_year, Project_state, 
         Phone_number, Team_ContactPerson, Team_ContactEmail, Team_ContactDepartment, Team_ContactLevel, 
-        Team_matricNo, Team_problem, Team_needs, Team_members, 
-        certification
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        Team_matricNo, Team_problem, Team_needs, Team_members
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 ");
 
 $stmt->bind_param(
-    "sssssssssssssss",
+    "ssssssssssssss",
     $Team_name,
     $Team_Email,
     $Team_website,
@@ -86,8 +82,7 @@ $stmt->bind_param(
     $Team_matricNo,
     $Team_problem,
     $Team_needs,
-    $Team_members,
-    $certification
+    $Team_members
 );
 
 // If insert is successful
