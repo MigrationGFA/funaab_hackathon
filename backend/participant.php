@@ -25,21 +25,21 @@ if (!$conn) {
 // Collect and sanitize form inputs
 $Team_name              = trim($_POST['Team_name'] ?? '');
 $Team_Email             = strtolower(trim($_POST['Team_Email'] ?? ''));
-$Team_address           = trim($_POST['Team_address'] ?? '');
 $Team_website           = trim($_POST['Team_website'] ?? '');
-$Team_Category          = trim($_POST['Team_Category'] ?? '');
 $Team_year              = trim($_POST['Team_year'] ?? '');
-$Team_number            = trim($_POST['Team_number'] ?? '');
 $Project_state          = trim($_POST['Project_state'] ?? '');
 $Phone_number           = trim($_POST['Phone_number'] ?? '');
-$Business_solution      = trim($_POST['Business_solution'] ?? '');
-$Reason_Consideration   = trim($_POST['Reason_Consideration'] ?? '');
-$learning_method        = trim($_POST['learning_method'] ?? '');
 $Team_ContactPerson     = trim($_POST['Team_ContactPerson'] ?? '');
 $Team_ContactEmail      = strtolower(trim($_POST['Team_ContactEmail'] ?? ''));
-$Team_ContactDepartmant = trim($_POST['Team_ContactDepartmant'] ?? '');
+$Team_ContactDepartment = trim($_POST['Team_ContactDepartment'] ?? '');
 $Team_ContactLevel      = trim($_POST['Team_ContactLevel'] ?? '');
+$Team_matricNo           = trim($_POST['Team_matricNo'] ?? '');
+$Team_problem          = trim($_POST['Team_problem'] ?? '');
+$Team_needs            = trim($_POST['Team_needs'] ?? '');
+$Team_members      = trim($_POST['Team_members'] ?? '');
 $certification          = trim($_POST['certification'] ?? '');
+// $Reason_Consideration   = trim($_POST['Reason_Consideration'] ?? '');
+// $learning_method        = trim($_POST['learning_method'] ?? '');
 
 // Basic validation
 if (empty($Team_name) || empty($Team_Email) || empty($Team_ContactEmail)) {
@@ -64,31 +64,29 @@ $check->close();
 // Insert participant record
 $stmt = $conn->prepare("
     INSERT INTO participants (
-        Team_name, Team_Email, Team_address, Team_website, Team_Category, 
-        Team_year, Team_number, Project_state, Phone_number, Business_solution, 
-        Reason_Consideration, learning_method, Team_ContactPerson, Team_ContactEmail, 
-        Team_ContactDepartmant, Team_ContactLevel, certification
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        Team_name, Team_Email, Team_website, Team_year, Project_state, 
+        Phone_number, Team_ContactPerson, Team_ContactEmail, Team_ContactDepartment, Team_ContactLevel, 
+        Team_matricNo, Team_problem, Team_needs, Team_members, 
+        certification
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 ");
 
 $stmt->bind_param(
-    "sssssssssssssssss",
+    "sssssssssssssss",
     $Team_name,
     $Team_Email,
-    $Team_address,
     $Team_website,
-    $Team_Category,
     $Team_year,
-    $Team_number,
     $Project_state,
     $Phone_number,
-    $Business_solution,
-    $Reason_Consideration,
-    $learning_method,
     $Team_ContactPerson,
     $Team_ContactEmail,
-    $Team_ContactDepartmant,
+    $Team_ContactDepartment,
     $Team_ContactLevel,
+    $Team_matricNo,
+    $Team_problem,
+    $Team_needs,
+    $Team_members,
     $certification
 );
 
