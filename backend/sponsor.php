@@ -16,8 +16,8 @@ require_once 'config.php';
 require_once 'functions.php'; // Ensure this file contains ACMail() function
 
 // Optional debugging (writes to log, not output)
-// $testMail = ACMail('Test Sender', 'Test Email', 'This is a test message.', 'quoidevoladde-6850@yopmail.com');
-// error_log("Test mail result: " . print_r($testMail, true));
+$testMail = ACMail('Test Sender', 'Test Email', 'This is a test message.', 'quoidevoladde-6850@yopmail.com');
+error_log("Test mail result: " . print_r($testMail, true));
 
 
 // Database Connection
