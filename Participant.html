@@ -113,26 +113,40 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script>
-      $(document).ready(function () {
-    //Clicked Action 
+$(document).ready(function () {
 
-$('#startUpForm').on('submit', function (e) {
-  e.preventDefault();
+  $('#startUpForm').on('submit', function (e) {
+    e.preventDefault();
 
-  const form = $(this);
-  const formData = new FormData(this);
-  const submitBtn = form.find('.displayAction');
-  submitBtn.prop('disabled', true).text('Submitting...');
+    const form = $(this);
+    const formData = new FormData(this);
+    const submitBtn = form.find('.displayAction');
 
-  $.ajax({
-    type: 'POST',
-    url: 'backend/participant.php',
-    data: formData,
-    processData: false,
-    contentType: false,
-    success: function (res) {
-      try {
-        const response = JSON.parse(res);
+    // Disable button and show loading indicator
+    submitBtn.prop('disabled', true).html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
+
+    $.ajax({
+      type: 'POST',
+      url: 'backend/participant.php',
+      data: formData,
+      processData: false,
+      contentType: false,
+
+      success: function (res) {
+        let response;
+
+        try {
+          response = JSON.parse(res);
+        } catch (error) {
+          console.error('Response parse error:', res);
+          Swal.fire({
+            icon: 'error',
+            title: 'Parse Error',
+            text: 'Could not understand server response. Please try again later.',
+          });
+          return;
+        }
+
         if (response.success) {
           Swal.fire({
             icon: 'success',
@@ -145,33 +159,30 @@ $('#startUpForm').on('submit', function (e) {
           Swal.fire({
             icon: 'error',
             title: 'Error',
-            text: response.message || 'An unknown error occurred.',
+            text: response.message || 'Something went wrong, please check your input.',
             confirmButtonColor: '#dc3545',
           });
         }
-      } catch (err) {
-        console.error(err);
+      },
+
+      error: function (xhr, status, error) {
+        console.error('AJAX Error:', error);
         Swal.fire({
           icon: 'error',
-          title: 'Parse Error',
-          text: 'Could not parse server response.',
+          title: 'Request Failed',
+          text: 'Network or server error. Please try again later.',
         });
+      },
+
+      complete: function () {
+        // Re-enable button
+        submitBtn.prop('disabled', false).html('Submit');
       }
-    },
-    error: function (xhr, status, error) {
-      console.error(error);
-      Swal.fire({
-        icon: 'error',
-        title: 'Request Failed',
-        text: 'Something went wrong. Please try again.',
-      });
-    },
-    complete: function () {
-      submitBtn.prop('disabled', false).text('Submit');
-    }
+    });
   });
+
 });
-});
-  </script>
+</script>
+
 </body>
 </html>
