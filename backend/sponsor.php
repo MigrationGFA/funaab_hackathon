@@ -118,7 +118,7 @@ if ($stmt->execute()) {
           <img src='../images/h5-logo-dark.png' alt='Agrotech Hackathon'>
         </header>
         <div class='content'>
-          <p>Dear Hackathon Sponsor,</p>
+          <p>Dear {$Sponsors_name},</p>
 
           <p>Greetings from <strong>Federal University of Agriculture, Abeokuta (FUNAAB)</strong>, 
           the <strong>Centre for Entrepreneurial Studies</strong>, and <strong>REMSANA Technologies</strong>, 
