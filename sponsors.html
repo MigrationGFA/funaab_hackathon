@@ -74,18 +74,15 @@
   <script src="js/jquery.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script>
+  <script>    
     $(document).ready(function () {
-
       $('#sponsorForm').on('submit', function (e) {
         e.preventDefault();
+        const form = $(this)[0];
+        const formData = new FormData(this);
+        const submitBtn = $(this).find('.displayAction');
 
-        const form = this;
-        const formData = new FormData(form);
-        const submitBtn = $(form).find('.displayAction');
-
-        // Disable button & show loading spinner
-        submitBtn.prop('disabled', true).html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
+        submitBtn.prop('disabled', true).text('Submitting...');
 
         $.ajax({
           type: 'POST',
@@ -93,56 +90,47 @@
           data: formData,
           processData: false,
           contentType: false,
-
           success: function (res) {
-            let response;
-
             try {
-              response = JSON.parse(res);
-            } catch (error) {
-              console.error('Response parse error:', res);
+              const response = JSON.parse(res);
+              if (response.success) {
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Success!',
+                  text: response.message,
+                  confirmButtonColor: '#198754',
+                });
+                form.reset();
+              } else {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Error',
+                  text: response.message || 'An unknown error occurred.',
+                  confirmButtonColor: '#dc3545',
+                });
+              }
+            } catch (err) {
+              console.error(err);
               Swal.fire({
                 icon: 'error',
                 title: 'Parse Error',
-                text: 'Unable to read server response. Please try again later.',
-              });
-              return;
-            }
-
-            if (response.success) {
-              Swal.fire({
-                icon: 'success',
-                title: 'Success!',
-                text: response.message,
-                confirmButtonColor: '#198754',
-              });
-              form.reset();
-            } else {
-              Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: response.message || 'Something went wrong. Please check your input.',
-                confirmButtonColor: '#dc3545',
+                text: 'Could not parse server response.',
               });
             }
           },
-
           error: function (xhr, status, error) {
-            console.error('AJAX Error:', error);
+            console.error(error);
             Swal.fire({
               icon: 'error',
               title: 'Request Failed',
-              text: 'Network or server error. Please try again later.',
+              text: 'Something went wrong. Please try again.',
             });
           },
-
           complete: function () {
-            // Restore button state
-            submitBtn.prop('disabled', false).html('Submit');
+            submitBtn.prop('disabled', false).text('Submit');
           }
         });
       });
-
     });
   </script>
 
