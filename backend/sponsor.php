@@ -14,6 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 require_once 'config.php';
 require_once 'functions.php'; // Ensure this file contains ACMail() function
+$result = ACMail('Test Sender', 'Test Email', 'This is a test message.', 'yourtestemail@example.com');
+var_dump($result);
 
 // Database Connection
 $conn = mysqli_connect(
@@ -145,9 +147,18 @@ if ($stmt->execute()) {
 
     // Send acknowledgment email
     $recipient_email = $Sponsors_Emailaddress;
-    ACMail($from, $subject, $message, $recipient_email);
 
+    $mailResult = ACMail($from, $subject, $message, $recipient_email);
+
+if ($mailResult['success']) {
     echo json_encode(['success' => true, 'message' => 'Thank you for signing up as a sponsor! We will contact you soon.']);
+} else {
+    echo json_encode(['success' => false, 'message' => 'Sponsor added, but email failed to send. Debug: '.$mailResult['message']]);
+}
+
+    // ACMail($from, $subject, $message, $recipient_email);
+
+    // echo json_encode(['success' => true, 'message' => 'Thank you for signing up as a sponsor! We will contact you soon.']);
 } else {
     echo json_encode(['success' => false, 'message' => 'Failed to submit sponsor information. Please try again.']);
 }
