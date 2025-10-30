@@ -14,8 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 require_once 'config.php';
 require_once 'functions.php'; // Ensure this file contains ACMail() function
-$result = ACMail('Test Sender', 'Test Email', 'This is a test message.', 'quoidevoladde-6850@yopmail.com');
-var_dump($result);
+
+// Optional debugging (writes to log, not output)
+$testMail = ACMail('Test Sender', 'Test Email', 'This is a test message.', 'quoidevoladde-6850@yopmail.com');
+error_log("Test mail result: " . print_r($testMail, true));
+
 
 // Database Connection
 $conn = mysqli_connect(
