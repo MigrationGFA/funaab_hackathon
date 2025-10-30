@@ -1,6 +1,46 @@
+.gain-list-custom.text-white li {
+  color: #fff;
+}
+/* What You Stand to Gain Section Styles */
+.gain-img {
+  width: 100%;
+  max-width: 400px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin: 0 auto;
+}
+@media (min-width: 992px) {
+  .gain-img {
+    height: 420px;
+  }
+}
+.gain-list-custom {
+  list-style: disc inside;
+  padding-left: 0;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+.gain-list-custom li {
+  margin-bottom: 1rem;
+}
+/* About Section Image Styles */
+.about-img {
+  width: 90%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+@media (min-width: 992px) {
+  .about-img {
+    height: 420px;
+  }
+}
 /* Objectives Section Styles */
 .objective-img {
-  width: 100%;
+  width: 300%;
   height: 320px;
   object-fit: cover;
   border-radius: 8px;
@@ -1411,11 +1451,11 @@ color: white;
   margin-bottom: 0;
 }
 .single-intro-text .count-number {
-  position: absolute;
+  /* position: absolute;
   right: -55px;
   bottom: -55px;
   width: 120px;
-  height: 120px;
+  height: 120px; */
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -1425,7 +1465,7 @@ color: white;
   text-align: left;
   font-size: 16px;
   font-weight: 700;
-  padding: 25px 30px;
+  padding: 0px 2px;
 }
 
 .intro-video {
@@ -1767,9 +1807,15 @@ color: white;
 /* new code */
 
 /* --- Objectives Section --- */
+.containerrs{
+   padding-left: 60px;
+  padding-right:100px ;
+}
+
 .ts-experiences {
   background-color: #f8f9fa; /* light background */
   color: #061829;
+ 
 }
 
 .section-title {
@@ -1829,7 +1875,111 @@ color: white;
   .section-title {
     text-align: center;
   }
+  .containerrs{
+   padding-left: 10px;
+  padding-right:10px ;
 }
+
+}
+/* --- Participant Criteria Section --- */
+#participant-criteria {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+  color: #061829;
+}
+
+.column-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000428;
+  margin-bottom: 1rem;
+  text-align:center ;
+}
+
+.column-title span {
+  display: block;
+  color: #fc367b;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.single-intro-text {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  position: relative;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.single-intro-text:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.single-intro-text h3 {
+  font-size: 1.25rem;
+  color: #0a1a4a;
+  margin-bottom: 10px;
+}
+
+.single-intro-text p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.count-number {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fc367b;
+}
+
+.gain-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.gain-list li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+/* Placeholder for image */
+.gain-image {
+  background: url("images/participant-placeholder.jpg") center/cover no-repeat;
+  width: 100%;
+  min-height: 300px;
+  border-radius: 15px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991px) {
+  #participant-criteria {
+    padding: 50px 0;
+  }
+
+  .gain-image {
+    margin-bottom: 25px;
+  }
+
+  .column-title {
+    text-align: center;
+  }
+
+  .gain-list li {
+    text-align: center;
+  }
+}
+
 
 .ts-experiences {
   padding: 0;
@@ -2668,6 +2818,16 @@ color: white;
   color: #3b1d82;
 }
 
+.entry-content {
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+.entry-contents{
+  color:#333;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
 
 @media (max-width: 480px) {
   .post-meta h1{
@@ -2676,9 +2836,14 @@ color: white;
   color: #3b1d82;
 }
 
-.entry-content p{
+.entry-content {
   padding-left: 20px;
   padding-right: 20px;
+
+}
+.entry-contents{
+  color:black;
+  font-size: 16px;
 }
 
 }
@@ -2800,10 +2965,17 @@ color: white;
 /*==========================
       sponsors
 ============================*/
+
+.ts-gain{
+  background-color: #3b1d82;
+} 
+
+
 .ts-intro-sponsors {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  
 }
 .ts-intro-sponsors .sponsors-logo img {
   margin: 0 38px 50px;
@@ -4037,6 +4209,14 @@ blockquote:before {
   font-weight: 300;
   margin-bottom: 8px;
   padding-bottom: 15px;
+}
+
+
+.column-titleS {
+    font-size: 26px;
+  margin-bottom: 15px;
+  color: #3b1d82;
+
 }
 .ts-event-outcome .outcome-content .column-title span {
   color: #fff;
