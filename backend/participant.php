@@ -128,7 +128,8 @@ if ($stmt->execute()) {
     if ($mailResult['success']) {
         echo json_encode(['success' => true, 'message' => 'Thank you for signing up as a sponsor! We will contact you soon.']);
     } else {
-        echo json_encode(['success' => false, 'message' => 'Sponsor added, but email failed to send. Debug: '.$mailResult['message']]);
+        echo json_encode(['success' => false, 'message' => 'Sponsor added, but email failed to send.']);
+        // echo json_encode(['success' => false, 'message' => 'Sponsor added, but email failed to send. Debug: '.$mailResult['message']]);
     }
 } else {
     echo json_encode(['success' => false, 'message' => 'Failed to submit form. Please try again.']);
