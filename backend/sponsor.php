@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 error_reporting(E_ALL);
 date_default_timezone_set('UTC'); 
 
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 require_once 'config.php';
-require_once 'functions.php'; // Ensure this file contains ACMail() function
+require_once 'functions.php';
 
 // Database Connection
 $conn = mysqli_connect(
@@ -113,7 +113,7 @@ if ($stmt->execute()) {
           <img src='../images/h5-logo-dark.png' alt='Agrotech Hackathon'>
         </header>
         <div class='content'>
-          <p>Dear Hackathon Sponsor,</p>
+          <p>Dear {$Sponsors_name},</p>
 
           <p>Greetings from <strong>Federal University of Agriculture, Abeokuta (FUNAAB)</strong>, 
           the <strong>Centre for Entrepreneurial Studies</strong>, and <strong>REMSANA Technologies</strong>, 
@@ -145,9 +145,15 @@ if ($stmt->execute()) {
 
     // Send acknowledgment email
     $recipient_email = $Sponsors_Emailaddress;
-    ACMail($from, $subject, $message, $recipient_email);
 
-    echo json_encode(['success' => true, 'message' => 'Thank you for signing up as a sponsor! We will contact you soon.']);
+    $mailResult = ACMail($from, $subject, $message, $recipient_email);
+
+    if ($mailResult['success']) {
+        echo json_encode(['success' => true, 'message' => 'Thank you for signing up as a sponsor! We will contact you soon.']);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Sponsor added, but email failed to send.']);
+    }
+
 } else {
     echo json_encode(['success' => false, 'message' => 'Failed to submit sponsor information. Please try again.']);
 }
