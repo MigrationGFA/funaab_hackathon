@@ -1,0 +1,697 @@
+/* =============================================
+   HERO SECTION REDESIGN
+   Matches reference image with:
+   - Transparent navbar overlay
+   - Full-viewport hero with dark overlay
+   - Playfair Display serif heading
+   - Yellow/gold CTA buttons
+   - Bottom feature bar
+   ============================================= */
+
+/* ----- TRANSPARENT HEADER OVERLAY ----- */
+/* Uses header-classic for dropdown logic + hero-header for transparent look */
+.header.header-classic.hero-header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none !important;
+}
+
+.header-classic.hero-header .navbar {
+  padding: 8px 0;
+}
+
+.header-classic.hero-header ul.navbar-nav>li>a {
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.header-classic.hero-header ul.navbar-nav>li>a:hover {
+  color: #27AE60 !important;
+}
+
+.header-classic.hero-header ul.navbar-nav>li.header-ticket .ticket-btn {
+  background: #27AE60 !important;
+  color: #1a1a1a !important;
+  border-radius: 4px;
+  font-weight: 700;
+  border: 2px solid #2ECC71;
+  transition: all 0.3s ease;
+}
+
+.header-classic.hero-header ul.navbar-nav>li.header-ticket .ticket-btn:hover {
+  background: transparent !important;
+  color: #27AE60 !important;
+  border-color: #27AE60;
+}
+
+/* Dropdown styling — keep it visible and themed */
+.header-classic.hero-header ul.navbar-nav li .dropdown-menu {
+  background: rgba(20, 20, 20, 0.95) !important;
+  border: 1px solid rgba(39, 174, 96, 0.2);
+  border-radius: 8px;
+}
+
+.header-classic.hero-header ul.navbar-nav li .dropdown-menu li a {
+  color: #ccc !important;
+}
+
+.header-classic.hero-header ul.navbar-nav li .dropdown-menu li a:hover {
+  color: #27AE60 !important;
+}
+
+/* When header becomes sticky, restore solid bg */
+.header-classic.hero-header.sticky {
+  background: rgba(15, 15, 15, 0.97) !important;
+  border-bottom: 1px solid rgba(39, 174, 96, 0.15);
+}
+
+/* ----- HERO SECTION ----- */
+.hero-redesign {
+  padding: 0 !important;
+  margin: 0;
+}
+
+.hero-bg {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(5, 10, 5, 0.75) 0%,
+      rgba(10, 20, 10, 0.6) 40%,
+      rgba(5, 5, 5, 0.7) 100%);
+  z-index: 1;
+}
+
+/* ----- HERO CONTENT ----- */
+.hero-content-wrapper {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 140px 20px 120px;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 850px;
+  width: 100%;
+}
+
+/* Decorative plant icon */
+.hero-icon {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  animation: gentleBounce 3s ease-in-out infinite;
+}
+
+@keyframes gentleBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #27AE60;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Main heading — Playfair Display for serif elegance */
+.hero-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 58px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero-heading-accent {
+  display: block;
+  color: #27AE60;
+}
+
+/* Tagline */
+.hero-tagline {
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+
+/* ----- COUNTDOWN TIMER ----- */
+.hero-countdown {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.hero-countdown .counter-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(39, 174, 96, 0.25);
+  border-radius: 12px;
+  padding: 12px 18px;
+  min-width: 80px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-countdown .counter-item:hover {
+  transform: translateY(-3px);
+  border-color: #27AE60;
+}
+
+.hero-countdown .counter-item i {
+  display: none;
+  /* hide the ring icons for cleaner look */
+}
+
+.hero-countdown .counter-item span {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #27AE60;
+  line-height: 1.2;
+}
+
+.hero-countdown .counter-item .smalltext {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 4px;
+}
+
+/* ----- CTA BUTTONS ----- */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  border: 2px solid transparent;
+}
+
+.hero-btn-primary {
+  background: #27AE60;
+  color: #1a1a1a;
+  border-color: #27AE60;
+  box-shadow: 0 4px 20px rgba(39, 174, 96, 0.3);
+}
+
+.hero-btn-primary:hover {
+  background: #219150;
+  border-color: #219150;
+  color: #fff;
+  box-shadow: 0 6px 30px rgba(39, 174, 96, 0.45);
+  transform: translateY(-2px);
+}
+
+.hero-btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-btn-outline:hover {
+  background: #27AE60;
+  color: #1a1a1a;
+  border-color: #27AE60;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(39, 174, 96, 0.35);
+}
+
+/* ----- BOTTOM FEATURE BAR ----- */
+.hero-feature-bar {
+  position: relative;
+  z-index: 2;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(39, 174, 96, 0.15);
+}
+
+.hero-feature-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 18px 30px;
+  gap: 30px;
+}
+
+.hero-feature-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: #27AE60;
+  white-space: nowrap;
+  font-style: italic;
+}
+
+.hero-features {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+}
+
+.hero-feature-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: #27AE60;
+  color: #1a1a1a;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.hero-feature-divider {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 18px;
+  user-select: none;
+}
+
+/* =============================================
+   RESPONSIVE STYLES — Redesigned for Mobile
+   ============================================= */
+
+/* Tablet landscape (1024px and below) */
+@media (max-width: 1024px) {
+  .hero-heading {
+    font-size: 48px;
+  }
+
+  .hero-content-wrapper {
+    padding: 130px 30px 110px;
+  }
+
+  .hero-feature-bar-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .hero-features {
+    justify-content: center;
+  }
+}
+
+/* Tablet portrait (768px and below) */
+@media (max-width: 768px) {
+
+  /* --- Hero layout --- */
+  .hero-bg {
+    min-height: 100vh;
+    min-height: 100svh;
+    /* use small viewport height on mobile for better fit */
+  }
+
+  .hero-content-wrapper {
+    padding: 100px 24px 30px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  /* --- Icon --- */
+  .hero-icon {
+    margin-bottom: 16px;
+  }
+
+  .hero-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* --- Typography --- */
+  .hero-subtitle {
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    margin-bottom: 16px;
+    padding: 0 10px;
+    line-height: 1.8;
+  }
+
+  .hero-heading {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-heading-accent {
+    font-size: 34px;
+    margin-top: 4px;
+  }
+
+  .hero-tagline {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    padding: 0 10px;
+    line-height: 1.6;
+  }
+
+  /* --- Countdown: 2x2 grid on tablet --- */
+  .hero-countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 28px;
+    padding: 0 10px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-countdown .counter-item {
+    min-width: unset;
+    padding: 10px 8px;
+    border-radius: 10px;
+  }
+
+  .hero-countdown .counter-item span {
+    font-size: 24px;
+  }
+
+  .hero-countdown .counter-item .smalltext {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* --- Buttons: stacked, full-width --- */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+  }
+
+  /* --- Feature bar: compact grid --- */
+  .hero-feature-bar {
+    border-top: 1px solid rgba(39, 174, 96, 0.2);
+  }
+
+  .hero-feature-bar-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 14px 20px;
+  }
+
+  .hero-feature-label {
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 8px;
+    width: 100%;
+  }
+
+  .hero-feature-divider {
+    display: none;
+  }
+
+  .hero-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+    width: 100%;
+    justify-items: start;
+  }
+
+  .hero-feature-item {
+    font-size: 13px;
+    gap: 6px;
+    white-space: normal;
+  }
+
+  .hero-feature-check {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+
+  /* --- Navbar mobile menu --- */
+  .hero-header .navbar-nav {
+    background: rgba(10, 10, 10, 0.97);
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid rgba(39, 174, 96, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-header .navbar-toggler {
+    border-color: rgba(39, 174, 96, 0.4) !important;
+  }
+
+  .hero-header .navbar-toggler .icon {
+    color: #fff;
+  }
+
+  .header-classic.hero-header ul.navbar-nav>li>a {
+    line-height: 44px !important;
+    font-size: 13px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .header-classic.hero-header ul.navbar-nav>li:last-child>a {
+    border-bottom: none;
+  }
+
+  .header-classic.hero-header ul.navbar-nav>li.header-ticket {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(39, 174, 96, 0.15);
+  }
+
+  .header-classic.hero-header ul.navbar-nav>li.header-ticket .ticket-btn {
+    margin-left: 0 !important;
+    display: block;
+    text-align: center;
+    border-radius: 8px;
+  }
+}
+
+/* Small mobile (480px and below) */
+@media (max-width: 480px) {
+
+  .hero-content-wrapper {
+    padding: 90px 16px 20px;
+  }
+
+  /* --- Icon smaller --- */
+  .hero-icon {
+    margin-bottom: 12px;
+  }
+
+  .hero-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* --- Typography: tighter for small screens --- */
+  .hero-subtitle {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
+    padding: 0 5px;
+  }
+
+  .hero-heading {
+    font-size: 28px;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+    line-height: 1.15;
+  }
+
+  .hero-heading-accent {
+    font-size: 26px;
+    margin-top: 2px;
+  }
+
+  .hero-tagline {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    padding: 0 5px;
+  }
+
+  /* --- Countdown: 2x2 grid on small mobile --- */
+  .hero-countdown {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 0 15px;
+    max-width: 260px;
+    margin-bottom: 22px;
+  }
+
+  .hero-countdown .counter-item {
+    padding: 10px 6px;
+    border-radius: 8px;
+  }
+
+  .hero-countdown .counter-item span {
+    font-size: 22px;
+  }
+
+  .hero-countdown .counter-item .smalltext {
+    font-size: 9px;
+    letter-spacing: 0.8px;
+  }
+
+  /* --- Buttons --- */
+  .hero-buttons {
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  .hero-btn {
+    padding: 13px 16px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    max-width: 280px;
+  }
+
+  /* --- Feature bar: single column --- */
+  .hero-features {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    justify-items: center;
+  }
+
+  .hero-feature-bar-inner {
+    padding: 12px 16px;
+    gap: 8px;
+  }
+
+  .hero-feature-label {
+    font-size: 13px;
+    padding-bottom: 6px;
+  }
+
+  .hero-feature-item {
+    font-size: 12px;
+  }
+
+  .hero-feature-check {
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+  }
+}
+
+/* Extra small screens (360px and below, e.g. older phones) */
+@media (max-width: 360px) {
+
+  .hero-content-wrapper {
+    padding: 85px 12px 16px;
+  }
+
+  .hero-heading {
+    font-size: 24px;
+  }
+
+  .hero-heading-accent {
+    font-size: 22px;
+  }
+
+  .hero-subtitle {
+    font-size: 10px;
+  }
+
+  .hero-tagline {
+    font-size: 12px;
+  }
+
+  .hero-countdown .counter-item span {
+    font-size: 20px;
+  }
+
+  .hero-btn {
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+}
