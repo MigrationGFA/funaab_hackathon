@@ -53,6 +53,16 @@
   <link rel="stylesheet" href="css/style.css" />
   <!-- Hero redesign styles -->
   <link rel="stylesheet" href="css/hero-redesign.css" />
+  <!-- About section redesign styles -->
+  <link rel="stylesheet" href="css/about-redesign.css" />
+  <!-- Objectives redesign styles -->
+  <link rel="stylesheet" href="css/objectives-redesign.css" />
+  <!-- Criteria redesign styles -->
+  <link rel="stylesheet" href="css/criteria-redesign.css" />
+  <!-- Gain redesign styles -->
+  <link rel="stylesheet" href="css/gain-redesign.css" />
+  <!-- Sponsors redesign styles -->
+  <link rel="stylesheet" href="css/sponsors-redesign.css" />
   <!-- Responsive styles-->
   <link rel="stylesheet" href="css/responsive.css" />
   <script src="js/jquery.js"></script>
@@ -120,7 +130,7 @@
             <!-- Decorative plant icon -->
             <div class="hero-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-                stroke="#2ECC71" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                stroke="#228B22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22V12" />
                 <path d="M12 12C12 12 7 9 4 6c3-1 6 0 8 3" />
                 <path d="M12 12c0 0 5-3 8-6-3-1-6 0-8 3" />
@@ -211,95 +221,168 @@
       </div>
     </section>
     <!-- banner end-->
-    <section class="main-container pb-6" id="main-container">
-      <div class="post-meta text-center" id="about">
-        <h1>ABOUT THE HACKATHON</h1>
-      </div>
-      <div class="containerr" id="about">
-        <div class="row align-items-center">
-          <!-- Text column -->
-          <div class="col-lg-8 col-md-12 order-lg-1 order-2">
-            <div class="entry-content">
-              <p class="entry-contents">
-                The Agro-Tech Hackathon is an innovative event aimed at
-                bringing together students, researchers, Alumni and
-                industry professionals to address the problems in the
-                farming ecosystem through technological and sustainable
-                solutions.
-              </p>
-              <p class="entry-contents">
-                By leveraging cutting-edge technologies such as
-                artificial intelligence (AI), the Internet of Things
-                (IoT), and blockchain, participants will have the
-                opportunity to create impactful solutions that solves
-                problem, enhance productivity, sustainability, and
-                efficiency in agriculture.
-              </p>
-            </div>
-            <!-- entry content end-->
+    <section class="about-section" id="main-container">
+      <div class="about-container">
+        <!-- Left column: Text content -->
+        <div class="about-text-col">
+          <!-- Subtitle with leaf icon -->
+          <div class="about-subtitle">
+            <span class="about-leaf-icon">🌿</span>
+            About The Hackathon
           </div>
 
-          <!-- Image column: right on desktop, top on mobile -->
-          <div class="col-lg-4 col-md-12 mb-4 order-lg-2 order-1 text-center">
-            <img src="images/sponsors/participant.webp" alt="About Hackathon" class="img-fluid about-img" />
+          <!-- Main heading -->
+          <h1 class="about-heading">
+            ABOUT THE HACKATHON
+          </h1>
+
+          <!-- Paragraphs — original content preserved -->
+          <div class="about-body">
+            <p>
+              The Agro-Tech Hackathon is an innovative event aimed at
+              bringing together students, researchers, Alumni and
+              industry professionals to address the problems in the
+              farming ecosystem through technological and sustainable
+              solutions.
+            </p>
+            <p>
+              By leveraging cutting-edge technologies such as
+              artificial intelligence (AI), the Internet of Things
+              (IoT), and blockchain, participants will have the
+              opportunity to create impactful solutions that solves
+              problem, enhance productivity, sustainability, and
+              efficiency in agriculture.
+            </p>
+          </div>
+
+          <!-- Feature checklist -->
+          <div class="about-features">
+            <div class="about-feature-item">
+              <span class="about-check">&#10003;</span>
+              Innovation Driven
+            </div>
+            <div class="about-feature-item">
+              <span class="about-check">&#10003;</span>
+              Technology & Agriculture
+            </div>
+            <div class="about-feature-item">
+              <span class="about-check">&#10003;</span>
+              Industry Collaboration
+            </div>
+            <div class="about-feature-item">
+              <span class="about-check">&#10003;</span>
+              Sustainable Solutions
+            </div>
+          </div>
+
+          <!-- CTA button -->
+          <div class="about-cta">
+            <a href="participant.html" class="about-btn">Register Now ↗</a>
+          </div>
+        </div>
+
+        <!-- Right column: Image + Stats Card -->
+        <div class="about-image-col">
+          <!-- Stats card overlapping the image -->
+          <div class="about-stats-card">
+            <span class="about-stats-label">Participants Expected</span>
+            <span class="about-stats-number">500+</span>
+            <p class="about-stats-desc">
+              Students, researchers, alumni and industry professionals coming together to innovate.
+            </p>
+          </div>
+
+          <!-- Image -->
+          <div class="about-image-wrapper">
+            <img src="images/sponsors/participant.webp" alt="About Hackathon" class="about-image" />
           </div>
         </div>
       </div>
-      <!-- Container end-->
     </section>
 
     <!-- objectives start-->
-    <section class="ts-experiences">
-      <div class="containerrs py-5">
-        <div class="col-12 text-center mb-4">
-          <h2 class="section-title mb-0">OBJECTIVES</h2>
-        </div>
-        <div class="row align-items-center">
-          <!-- Image column: left on desktop, above on mobile -->
-          <div class="col-lg-4 col-md-12 mb-4 order-lg-1 order-1">
-            <img src="images/hero_area/Agro-girl-Two.webp" alt="Objectives" class="img-fluid objective-img" />
+    <section class="objectives-section" id="objectives">
+      <div class="objectives-container">
+
+        <!-- Left: Image -->
+        <div class="objectives-image-col">
+          <div class="objectives-image-wrapper">
+            <img src="images/hero_area/Agro-girl-Two.webp" alt="Objectives" class="objectives-image" />
           </div>
-          <!-- Cards column -->
-          <div class="col-lg-8 col-md-12 order-lg-2 order-2">
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="objective-card h-100">
-                  <h4>Industry Integration</h4>
-                  <p>
-                    Provide a platform for students and researchers to
-                    showcase their skills, encouraging collaboration between
-                    academia and industry.
-                  </p>
-                </div>
+        </div>
+
+        <!-- Right: Content & Cards -->
+        <div class="objectives-text-col">
+          <!-- Section Header -->
+          <div class="objectives-header">
+            <div class="objectives-subtitle">
+              <span class="objectives-leaf-icon">🌿</span>
+              Our Goals
+            </div>
+            <h2 class="objectives-heading">HACKATHON OBJECTIVES</h2>
+          </div>
+
+          <div class="objectives-grid">
+            <!-- Card 1 -->
+            <div class="objective-card-modern">
+              <div class="objective-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
               </div>
-              <div class="col-md-6 mb-4">
-                <div class="objective-card h-100">
-                  <h4>Skills Development</h4>
-                  <p>
-                    Promote awareness of sustainable and smart farming
-                    practices. Develop practical solutions to real-world
-                    agricultural challenges.
-                  </p>
-                </div>
+              <h4 class="objective-title">Industry Integration</h4>
+              <p class="objective-desc">
+                Provide a platform for students and researchers to showcase their skills, encouraging collaboration
+                between academia and industry.
+              </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="objective-card-modern">
+              <div class="objective-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
-              <div class="col-md-6 mb-4">
-                <div class="objective-card h-100">
-                  <h4>Innovation Incubation</h4>
-                  <p>
-                    Encourage creative solutions and ideas that drive
-                    agricultural transformation and sustainability.
-                  </p>
-                </div>
+              <h4 class="objective-title">Skills Development</h4>
+              <p class="objective-desc">
+                Promote awareness of sustainable and smart farming practices. Develop practical solutions to real-world
+                agricultural challenges.
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="objective-card-modern">
+              <div class="objective-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
               </div>
-              <div class="col-md-6 mb-4">
-                <div class="objective-card h-100">
-                  <h4>Agro-Industry Integration</h4>
-                  <p>
-                    Promote collaboration and awareness of sustainable and
-                    smart farming practices through industry engagement.
-                  </p>
-                </div>
+              <h4 class="objective-title">Innovation Incubation</h4>
+              <p class="objective-desc">
+                Encourage creative solutions and ideas that drive agricultural transformation and sustainability.
+              </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="objective-card-modern">
+              <div class="objective-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
+              <h4 class="objective-title">Agro-Industry Integration</h4>
+              <p class="objective-desc">
+                Promote collaboration and awareness of sustainable and smart farming practices through industry
+                engagement.
+              </p>
             </div>
           </div>
         </div>
@@ -307,168 +390,233 @@
     </section>
     <!-- objectives end-->
     <!-- Participant Selection Criteria Section -->
-    <section class="ts-intro-item section-bg" id="participant-criteria">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center mb-3">
-            <h1 class="column-titleS mb-2">PARTICIPANT SELECTION CRITERIA</h1>
-            <p class="lead" style="max-width: 600px; margin: 0 auto 2rem auto">
-              The following key areas will be considered during participant
-              selection for the Hackathon:
+    <section class="criteria-section" id="participant-criteria">
+      <div class="criteria-container">
+
+        <!-- Header -->
+        <div class="criteria-header">
+          <div class="criteria-subtitle">
+            <span class="criteria-leaf-icon">🌿</span>
+            Eligibility
+          </div>
+          <h1 class="criteria-heading">PARTICIPANT SELECTION CRITERIA</h1>
+          <p class="criteria-intro">
+            The following key areas will be considered during participant selection for the Hackathon:
+          </p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="criteria-grid">
+
+          <!-- Card 1 -->
+          <div class="criteria-card">
+            <span class="criteria-number">01</span>
+            <h3 class="criteria-title">Knowledge</h3>
+            <p class="criteria-desc">
+              Depth of understanding of agricultural business, problem statement, and emerging technology ideas.
             </p>
           </div>
+
+          <!-- Card 2 -->
+          <div class="criteria-card">
+            <span class="criteria-number">02</span>
+            <h3 class="criteria-title">Team</h3>
+            <p class="criteria-desc">
+              A team of 3–5 persons with combined skills and expertise in both agriculture and technology ecosystems.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="criteria-card">
+            <span class="criteria-number">03</span>
+            <h3 class="criteria-title">Product Idea</h3>
+            <p class="criteria-desc">
+              Critical description and feasibility of the proposed problem and solution.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="criteria-card">
+            <span class="criteria-number">04</span>
+            <h3 class="criteria-title">Innovative Diversity</h3>
+            <p class="criteria-desc">
+              Inclusion of diverse skills, gender (especially female founders), and innovative perspectives.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="criteria-card">
+            <span class="criteria-number">05</span>
+            <h3 class="criteria-title">Potential Contribution</h3>
+            <p class="criteria-desc">
+              Measurable impact and contribution to the agricultural innovation ecosystem.
+            </p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="criteria-card">
+            <span class="criteria-number">06</span>
+            <h3 class="criteria-title">Experience & Proximity</h3>
+            <p class="criteria-desc">
+              Previous innovation experience and proximity to implementing suggested solutions.
+            </p>
+          </div>
+
         </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="200ms">
-            <div class="single-intro-text mb-30">
-              <h3 class="ts-title">Knowledge</h3>
-              <p>
-                Depth of understanding of agricultural business, problem
-                statement, and emerging technology ideas.
-              </p>
-              <span class="count-number">01</span>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="200ms">
-            <div class="single-intro-text mb-30">
-              <h3 class="ts-title">Team</h3>
-              <p>
-                A team of 3–5 persons with combined skills and expertise in
-                both agriculture and technology ecosystems.
-              </p>
-              <span class="count-number">02</span>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="200ms">
-            <div class="single-intro-text mb-30">
-              <h3 class="ts-title">Product Idea</h3>
-              <p>
-                Critical description and feasibility of the proposed problem
-                and solution.
-              </p>
-              <span class="count-number">03</span>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="200ms">
-            <div class="single-intro-text mb-30">
-              <h3 class="ts-title">Innovative Diversity</h3>
-              <p>
-                Inclusion of diverse skills, gender (especially female
-                founders), and innovative perspectives.
-              </p>
-              <span class="count-number">04</span>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="200ms">
-            <div class="single-intro-text mb-30">
-              <h3 class="ts-title">Potential Contribution</h3>
-              <p>
-                Measurable impact and contribution to the agricultural
-                innovation ecosystem.
-              </p>
-              <span class="count-number">05</span>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="200ms">
-            <div class="single-intro-text mb-30">
-              <h3 class="ts-title">Experience & Proximity</h3>
-              <p>
-                Previous innovation experience and proximity to implementing
-                suggested solutions.
-              </p>
-              <span class="count-number">06</span>
-            </div>
-          </div>
+
+        <!-- CTA Buttons -->
+        <div class="criteria-actions">
+          <a href="participant.html" class="criteria-btn criteria-btn-primary">Register as a Participant</a>
+          <a href="sponsors.html" class="criteria-btn criteria-btn-secondary">Register as a Sponsor</a>
         </div>
-        <div class="row">
-          <div class="col-12 text-center mt-3">
-            <a href="participant.html" class="btn" style="margin-right: 1rem">Register as a Participant</a>
-            <a href="sponsors.html" class="btn" style="color: #106f10; background-color: #f1f2f3">Register as a
-              Sponsor</a>
-          </div>
-        </div>
+
       </div>
     </section>
 
     <!-- ts schedule end-->
     <!-- What You Stand to Gain as Participant Section -->
 
-    <section id="ts-experiences" class="ts-gain section-bg">
-      <div class="containerrs py-5">
-        <div class="col-12 text-center mb-4">
-          <h2 class="section-title mb-0 text-white">What you stand to gain as Participant</h2>
-        </div>
-        <div class="row align-items-center">
-          <!-- Cards left -->
-          <div class="col-lg-8 col-md-12 order-lg-1 order-1">
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="objective-card h-100">
-                  <h4>Visibility for your Product</h4>
-                </div>
+    <section id="ts-experiences" class="gain-section">
+      <div class="gain-container">
+
+        <!-- Left: Content & Cards -->
+        <div class="gain-text-col">
+          <!-- Section Header -->
+          <div class="gain-header">
+            <div class="gain-subtitle">
+              <span class="gain-leaf-icon">🌿</span>
+              Benefits
+            </div>
+            <h2 class="gain-heading">WHAT YOU STAND TO GAIN AS PARTICIPANT</h2>
+          </div>
+
+          <div class="gain-grid">
+            <!-- Card 1 -->
+            <div class="gain-card">
+              <div class="gain-icon">
+                <!-- Eye icon for visibility -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
               </div>
-              <div class="col-md-6 mb-4">
-                <div class="objective-card h-100">
-                  <h4>Incubation</h4>
-                </div>
+              <h4 class="gain-title">Visibility for your Product</h4>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="gain-card">
+              <div class="gain-icon">
+                <!-- Leaf/Sprout icon for incubation -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
               </div>
-              <div class="col-md-6 mb-4">
-                <div class="objective-card h-100">
-                  <h4>Stand a chance to win Start-up grant in Millions</h4>
-                </div>
+              <h4 class="gain-title">Incubation</h4>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="gain-card">
+              <div class="gain-icon">
+                <!-- Trophy/Grant icon for grant -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
-              <div class="col-md-6 mb-4">
-                <div class="objective-card h-100">
-                  <h4>Master pitching e.t.c</h4>
-                </div>
+              <h4 class="gain-title">Stand a chance to win Start-up grant in Millions</h4>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="gain-card">
+              <div class="gain-icon">
+                <!-- Microphone/Presentation icon for pitching -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                </svg>
               </div>
+              <h4 class="gain-title">Master pitching e.t.c</h4>
             </div>
           </div>
-          <!-- Image right on desktop, below on mobile -->
-          <div class="col-lg-4 col-md-12 mb-4 order-lg-2 order-2 text-center">
-            <img src="images/hero_area/Agro-girl-Four.webp" alt="What you gain" class="img-fluid objective-img" />
+        </div>
+
+        <!-- Right: Image -->
+        <div class="gain-image-col">
+          <div class="gain-image-wrapper">
+            <img src="images/hero_area/Agro-girl-Four.webp" alt="What you gain" class="gain-image" />
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- ts footer area start-->
     <div class="footer-area">
-      <!-- Sponsors section (replaces previous CTA) -->
-      <section class="ts-sponsors py-5"
-        style="background-image: url(images/book_seat_img.jpg); background-size: cover; background-position: center;">
-        <div class="container">
-          <div class="col-12 text-center mb-4">
-            <h2 class="section-title white mb-2">Our Sponsors</h2>
+      <!-- Sponsors Section -->
+      <section class="sponsors-section" id="sponsors">
+        <div class="sponsors-overlay"></div>
+        <div class="sponsors-container">
+
+          <!-- Header -->
+          <div class="sponsors-header">
+            <div class="sponsors-subtitle">
+              <span class="sponsors-leaf-icon">🌿</span>
+              Partners
+            </div>
+            <h2 class="sponsors-heading">OUR SPONSORS</h2>
           </div>
 
-          <div class="row align-items-center justify-content-center">
-            <!-- placeholder logos (replace src with real logos) -->
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
-              <a href="#" title="Sponsor 1"><img src="images/sponsors/dimp.png" alt="Sponsor 1"
-                  class="img-fluid sponsor-logo" /></a>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
-              <a href="#" title="Sponsor 2"><img src="images/sponsors/funnablogo.png" alt="Sponsor 2"
-                  class="img-fluid sponsor-logo" /></a>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
-              <a href="#" title="Sponsor 3"><img src="images/sponsors/logoColor.png" alt="Sponsor 3"
-                  class="img-fluid sponsor-logo" /></a>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
-              <a href="#" title="Sponsor 4"><img src="images/sponsors/gfa.png" alt="Sponsor 4"
-                  class="img-fluid sponsor-logo" /></a>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
-              <a href="#" title="Sponsor 5"><img src="images/sponsors/dimp.png" alt="Sponsor 5"
-                  class="img-fluid sponsor-logo" /></a>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center">
-              <a href="#" title="Sponsor 6"><img src="images/sponsors/funnablogo.png" alt="Sponsor 6"
-                  class="img-fluid sponsor-logo" /></a>
+          <!-- Animated Ticker -->
+          <div class="sponsors-ticker-wrap">
+            <div class="sponsors-ticker">
+              <!-- Original 6 logos -->
+              <div class="sponsor-logo-box">
+                <img src="images/sponsors/dimp.png" alt="Sponsor 1" class="sponsor-img" />
+              </div>
+              <div class="sponsor-logo-box">
+                <img src="images/sponsors/funnablogo.png" alt="Sponsor 2" class="sponsor-img" />
+              </div>
+              <div class="sponsor-logo-box">
+                <img src="images/sponsors/logoColor.png" alt="Sponsor 3" class="sponsor-img" />
+              </div>
+              <div class="sponsor-logo-box">
+                <img src="images/sponsors/gfa.png" alt="Sponsor 4" class="sponsor-img" />
+              </div>
+              <div class="sponsor-logo-box">
+                <img src="images/sponsors/dimp.png" alt="Sponsor 5" class="sponsor-img" />
+              </div>
+              <div class="sponsor-logo-box">
+                <img src="images/sponsors/funnablogo.png" alt="Sponsor 6" class="sponsor-img" />
+              </div>
+
+              <!-- Duplicated set for infinite loop illusion -->
+              <div class="sponsor-logo-box">
+                <img src="images/sponsors/dimp.png" alt="Sponsor 1" class="sponsor-img" />
+              </div>
+              <div class="sponsor-logo-box">
+                <img src="images/sponsors/funnablogo.png" alt="Sponsor 2" class="sponsor-img" />
+              </div>
+              <div class="sponsor-logo-box">
+                <img src="images/sponsors/logoColor.png" alt="Sponsor 3" class="sponsor-img" />
+              </div>
+              <div class="sponsor-logo-box">
+                <img src="images/sponsors/gfa.png" alt="Sponsor 4" class="sponsor-img" />
+              </div>
+              <div class="sponsor-logo-box">
+                <img src="images/sponsors/dimp.png" alt="Sponsor 5" class="sponsor-img" />
+              </div>
+              <div class="sponsor-logo-box">
+                <img src="images/sponsors/funnablogo.png" alt="Sponsor 6" class="sponsor-img" />
+              </div>
             </div>
           </div>
+
         </div>
       </section>
       <!-- sponsors end -->

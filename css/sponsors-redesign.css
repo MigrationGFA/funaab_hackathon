@@ -1,0 +1,185 @@
+/* =============================================
+   SPONSORS SECTION — Redesign
+   Animated infinite ticker with parallax background
+   ============================================= */
+
+.sponsors-section {
+    position: relative;
+    padding: 100px 0;
+    background-image: url('../images/book_seat_img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Parallax effect */
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Dark Green-tinted overlay to make logos pop */
+.sponsors-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(16, 24, 16, 0.9), rgba(34, 139, 34, 0.75));
+    z-index: 1;
+}
+
+.sponsors-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Header */
+.sponsors-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sponsors-subtitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #a3e635;
+    /* Lighter vivid green for dark bg */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+    justify-content: center;
+}
+
+.sponsors-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* Ticker Wrapper */
+.sponsors-ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+
+    /* Fade edges so logos appear seamlessly */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* The moving track */
+.sponsors-ticker {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: ticker 30s linear infinite;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+/* Pause on hover */
+.sponsors-ticker-wrap:hover .sponsors-ticker {
+    animation-play-state: paused;
+}
+
+/* Keyframes for continuous scroll */
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    /* Since we duplicate the exact set of items, moving by exactly 50% shifts 1 full set */
+    100% {
+        transform: translateX(calc(-50% - 20px));
+    }
+}
+
+/* Individual logo boxes */
+.sponsor-logo-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    width: 200px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sponsor-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 1;
+}
+
+/* =============================================
+   RESPONSIVE — Sponsors Section
+   ============================================= */
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+    .sponsors-section {
+        padding: 80px 0;
+        /* On mobile, parallax can sometimes be jittery; switch to scroll */
+        background-attachment: scroll;
+    }
+
+    .sponsors-heading {
+        font-size: 34px;
+    }
+
+    .sponsor-logo-box {
+        width: 160px;
+        height: 100px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .sponsors-section {
+        padding: 60px 0;
+    }
+
+    .sponsors-container {
+        padding: 0 16px;
+    }
+
+    .sponsors-heading {
+        font-size: 28px;
+    }
+
+    .sponsor-logo-box {
+        width: 140px;
+        height: 90px;
+        padding: 15px;
+    }
+
+    .sponsors-ticker {
+        gap: 20px;
+        animation-duration: 20s;
+        /* slightly faster on mobile */
+    }
+
+    @keyframes ticker {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-50% - 10px));
+        }
+    }
+}
