@@ -1,0 +1,359 @@
+/* =============================================
+   ABOUT THE HACKATHON SECTION — Redesign
+   Two-column layout: text left, image + stats right
+   ============================================= */
+
+/* ----- Section container ----- */
+.about-section {
+    padding: 80px 0 60px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* ----- Left Column: Text ----- */
+.about-text-col {
+    padding-right: 20px;
+}
+
+/* Subtitle */
+.about-subtitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #228B22;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+}
+
+.about-leaf-icon {
+    font-size: 18px;
+}
+
+/* Heading */
+.about-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #1a1a2e;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+/* Body text */
+.about-body {
+    margin-bottom: 28px;
+}
+
+.about-body p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.about-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* Feature checklist */
+.about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 30px;
+    margin-bottom: 32px;
+}
+
+.about-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.about-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: #228B22;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* CTA button */
+.about-cta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.about-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #228B22;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 15px rgba(34, 139, 34, 0.3);
+}
+
+.about-btn:hover {
+    background: #1B6E1B;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(34, 139, 34, 0.4);
+}
+
+/* ----- Right Column: Image + Stats ----- */
+.about-image-col {
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Stats card — overlapping top-right of image */
+.about-stats-card {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    z-index: 2;
+    background: linear-gradient(135deg, #2DA83A, #228B22);
+    color: #fff;
+    padding: 28px 30px;
+    border-radius: 16px;
+    max-width: 280px;
+    box-shadow: 0 10px 40px rgba(34, 139, 34, 0.3);
+}
+
+.about-stats-label {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    opacity: 0.9;
+}
+
+.about-stats-number {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.about-stats-desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+/* Image wrapper */
+.about-image-wrapper {
+    position: relative;
+    margin-top: 60px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.about-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image-wrapper:hover .about-image {
+    transform: scale(1.03);
+}
+
+/* Decorative accent dot — matching reference */
+.about-image-col::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background: #228B22;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+/* =============================================
+   RESPONSIVE — About Section
+   ============================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .about-container {
+        gap: 40px;
+    }
+
+    .about-heading {
+        font-size: 34px;
+    }
+
+    .about-stats-card {
+        max-width: 240px;
+        padding: 22px 24px;
+    }
+
+    .about-stats-number {
+        font-size: 40px;
+    }
+}
+
+/* Tablet portrait & below — single column */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 50px 0 40px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .about-text-col {
+        padding-right: 0;
+        order: 1;
+    }
+
+    .about-image-col {
+        padding-left: 0;
+        order: 2;
+    }
+
+    .about-heading {
+        font-size: 30px;
+        margin-bottom: 18px;
+    }
+
+    .about-body p {
+        font-size: 15px;
+    }
+
+    .about-features {
+        gap: 10px 20px;
+        margin-bottom: 24px;
+    }
+
+    .about-feature-item {
+        font-size: 14px;
+    }
+
+    /* Stats card — repositioned for mobile */
+    .about-stats-card {
+        position: relative;
+        top: auto;
+        right: auto;
+        max-width: 100%;
+        border-radius: 12px;
+        margin-bottom: 16px;
+    }
+
+    .about-image-wrapper {
+        margin-top: 0;
+        border-radius: 12px;
+    }
+
+    .about-image {
+        height: 280px;
+    }
+
+    .about-image-col::before {
+        display: none;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .about-section {
+        padding: 40px 0 30px;
+    }
+
+    .about-container {
+        padding: 0 16px;
+        gap: 24px;
+    }
+
+    .about-heading {
+        font-size: 26px;
+    }
+
+    .about-body p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .about-feature-item {
+        font-size: 13px;
+    }
+
+    .about-stats-card {
+        padding: 20px;
+    }
+
+    .about-stats-number {
+        font-size: 36px;
+    }
+
+    .about-stats-desc {
+        font-size: 12px;
+    }
+
+    .about-btn {
+        width: 100%;
+        text-align: center;
+        padding: 13px 24px;
+        font-size: 14px;
+    }
+
+    .about-image {
+        height: 220px;
+    }
+}

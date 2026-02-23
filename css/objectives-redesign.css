@@ -1,0 +1,230 @@
+/* =============================================
+   OBJECTIVES SECTION — Redesign
+   Image left, 2x2 grid of modern cards right
+   ============================================= */
+
+.objectives-section {
+    padding: 80px 0;
+    background: #f9fdfa;
+    /* subtle green-tinted off-white */
+    overflow: hidden;
+}
+
+.objectives-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* ----- Left Column: Image ----- */
+.objectives-image-col {
+    position: relative;
+}
+
+.objectives-image-wrapper {
+    position: relative;
+    z-index: 2;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.objectives-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.objectives-image-wrapper:hover .objectives-image {
+    transform: scale(1.05);
+}
+
+/* Decorative backdrop shape */
+.objectives-image-col::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    background: #228B22;
+    border-radius: 20px;
+    z-index: 1;
+    opacity: 0.1;
+}
+
+/* ----- Right Column: Text & Cards ----- */
+.objectives-text-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.objectives-subtitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #228B22;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+}
+
+.objectives-leaf-icon {
+    font-size: 18px;
+}
+
+.objectives-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #1a1a2e;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+
+/* Grid of Cards */
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.objective-card-modern {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(34, 139, 34, 0.08);
+    /* subtle green border */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.objective-card-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(34, 139, 34, 0.1);
+    border-color: rgba(34, 139, 34, 0.2);
+}
+
+/* Tiny green accent line at top of card */
+.objective-card-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #228B22;
+    transition: width 0.3s ease;
+}
+
+.objective-card-modern:hover::before {
+    width: 100%;
+}
+
+.objective-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(34, 139, 34, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    color: #228B22;
+    transition: all 0.3s ease;
+}
+
+.objective-card-modern:hover .objective-icon {
+    background: #228B22;
+    color: #ffffff;
+}
+
+.objective-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.objective-desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* =============================================
+   RESPONSIVE — Objectives Section
+   ============================================= */
+
+/* Tablet landscape */
+@media (max-width: 1024px) {
+    .objectives-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .objectives-image-col {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+    .objectives-section {
+        padding: 60px 0;
+    }
+
+    .objectives-heading {
+        font-size: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .objectives-subtitle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .objectives-grid {
+        gap: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .objectives-section {
+        padding: 50px 0;
+    }
+
+    .objectives-container {
+        padding: 0 20px;
+    }
+
+    .objectives-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .objectives-heading {
+        font-size: 26px;
+    }
+}
