@@ -146,7 +146,7 @@
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   font-weight: 400;
-  color: #228B22;
+  color: #ffffff;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -165,9 +165,13 @@
   text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
 }
 
-.hero-heading-accent {
+/* .hero-heading-accent {
   display: block;
   color: #228B22;
+} */
+.agro-text {
+  color: #228B22;
+
 }
 
 /* Tagline */
